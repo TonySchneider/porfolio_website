@@ -161,3 +161,4 @@ cython_debug/
 confidential.py
 base/migrations/*
 static/CV_Tony_Schneider.docx
+/.idea/
