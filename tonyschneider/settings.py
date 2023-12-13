@@ -26,7 +26,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = confidential.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = confidential.ALLOWED_HOSTS
 
@@ -147,12 +147,14 @@ STATICFILES_DIRS = [
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static/images')
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
+
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
+EMAIL_HOST = '127.0.0.1'
+EMAIL_PORT = 1025
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = confidential.EMAIL_HOST_USER
+EMAIL_HOST_USER = confidential.EMAIL_HOST_USER  # this is exactly the value 'apikey'
 EMAIL_HOST_PASSWORD = confidential.EMAIL_HOST_PASSWORD
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 
 CKEDITOR_UPLOAD_PATH = 'uploads/'
